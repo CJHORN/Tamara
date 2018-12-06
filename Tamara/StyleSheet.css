@@ -1,0 +1,92 @@
+﻿#loginBoxStyle {
+    text-align: center;
+    margin-top: 220px;
+}
+
+h2 {  
+    font-size: 50px;
+    color:azure;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.loginFields {
+    width: 500px;
+    height:50px;
+    border-radius: 15px;
+    outline:none;
+}
+
+body {
+    background-color: black;
+}
+
+#LoginQuestion {
+    text-align: center;
+    margin-top: 150px;
+    color:white;
+}
+
+#clientButtons {
+    /*text-align: center;*/
+    margin-top: 50px;
+    color: white;
+}
+
+#Button1 {
+    margin-right:auto;
+}
+
+.clientBox {
+    
+    margin-bottom:15px;
+    
+    margin-left: 15px;
+}
+
+
+
+.container {
+    margin-top: 250PX;
+    text-align: left;
+    border-left: 50px;
+    
+}
+
+#loginButton {
+    text-align: center;
+    margin-top: 30px;
+    font-size: x-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+#IdNumber {
+    margin-left: 220px;
+}
+
+.clientFields {
+    outline: none;
+    color: white;
+}
+
+.regtext {
+    color: white;
+    font-size: 15px;
+}
+
+#tableTwo {
+    float: left;
+    margin-left: 300px;
+}
+
+.regButton {
+    text-align: right;
+}
+
+.clientTableInfo {
+    color: white;
+}
+
+#ClientTable {
+    color: yellow;
+}
