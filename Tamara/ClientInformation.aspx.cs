@@ -9,17 +9,6 @@ namespace Tamara
 {
     public partial class ClientInformation : System.Web.UI.Page
     {
-        class RegisteredInfo
-        {
-            public string id { get; set; }
-            public string name { get; set; }
-            public string surname { get; set; }
-            public string cell { get; set; }
-            public string email { get; set; }
-            public string address { get; set; }
-        }
-        
-
 
         public void Page_Load(object sender, EventArgs e)
         {

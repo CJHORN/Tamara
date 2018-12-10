@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -19,16 +20,20 @@ namespace Tamara
 
         public void ButtonRegister_Click(object sender, EventArgs e)
         {
-           //var id =  Session["Clients"] =TextId.Text;
-           // Session["Clients"] =TextName.Text;
-           // Session["Clients"] =TextSurname.Text;
-           // Session["Clients"] =TextCell.Text;
-           // Session["Clients"] =TextEmail.Text;
-           // Session["Clients"] = TextAddress.Text;
-             
+            SqlConnection con = new SqlConnection(@"Data Source=ZA-MB-DEV-00896\SQLEXPRESS;Initial Catalog=CMR_FoodParcel_DB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            SqlCommand cmd = new SqlCommand("sp.insert", con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("IdNumber", TextId.Text);
+            cmd.Parameters.AddWithValue("FirstName", TextName.Text);
+            cmd.Parameters.AddWithValue("Surname", TextSurname.Text);
+            cmd.Parameters.AddWithValue("CellNumber", TextCell.Text);
+            cmd.Parameters.AddWithValue("Email", TextEmail.Text);
+            cmd.Parameters.AddWithValue("ResidentialAddress", TextAddress.Text);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
 
-           // DatabaseActions dbActions = new DatabaseActions();
-           // dbActions.BtnAddRegistration();
+
             Response.Redirect("ClientInformation.aspx");
         }
 
