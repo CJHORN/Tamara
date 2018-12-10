@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,8 +14,24 @@ namespace Tamara
 
         public void Page_Load(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(@"Data Source=ZA-MB-DEV-00896\SQLEXPRESS;Initial Catalog=CMR_FoodParcel_DB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            con.Open();
+            DataTable dt = new DataTable();
+            SqlDataReader myReader = null;
+            SqlCommand myCommand = new SqlCommand("SELECT * FROM CMR_FoodParcelRegistrations");
+            myReader = myCommand.ExecuteReader();
 
+            while (myReader.Read())
+            {
+                idTxt.InnerText = (myReader["IdNumber"].ToString());
+                nameTxt.InnerText = (myReader["FirstName"].ToString());
+                surnameTxt.InnerText = (myReader["Surname"].ToString());
+                cellTxt.InnerText = (myReader["CellNumber"].ToString());
+                emailTxt.InnerText = (myReader["Email"].ToString());
+                addressTxt.InnerText = (myReader["ResidentialAddress"].ToString());
 
+            }
+            con.Close();
         }
 
 

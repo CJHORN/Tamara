@@ -21,7 +21,7 @@ namespace Tamara
         public void ButtonRegister_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Data Source=ZA-MB-DEV-00896\SQLEXPRESS;Initial Catalog=CMR_FoodParcel_DB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-            SqlCommand cmd = new SqlCommand("sp.insert", con);
+            SqlCommand cmd = new SqlCommand("RegisteredClientsDetails", con);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("IdNumber", TextId.Text);
             cmd.Parameters.AddWithValue("FirstName", TextName.Text);

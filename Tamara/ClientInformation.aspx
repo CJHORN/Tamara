@@ -67,7 +67,7 @@
                     <tr class="clientTableInfo">
                         <td runat="server" id="idTxt" textbox="text_Id"></td>
                         <td runat="server" id="nameTxt"></td>
-                        <td runat="server" id="SurnameTxt"></td>
+                        <td runat="server" id="surnameTxt"></td>
                         <td runat="server" id="cellTxt"></td>
                         <td runat="server" id="emailTxt"></td>
                         <td runat="server" id="addressTxt"></td>
